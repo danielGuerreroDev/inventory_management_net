@@ -1,26 +1,63 @@
-import React, { useEffect, useState } from "react";
-import Axios from "axios";
+import React from 'react';
+import {
+  Route,
+  Routes,
+} from 'react-router-dom';
+import { useAuth0 } from '@auth0/auth0-react';
+import Dashboard from './pages/Dashboard.jsx';
+import Home from './pages/Home.jsx';
+import Logout from './pages/Logout.jsx';
+import Products from './pages/Products.jsx';
+import LinearProgress from '@mui/material/LinearProgress';
 
-const App = () => {
-  const [data, setData] = useState(null);
+function App() {
+  const { isAuthenticated, isLoading } = useAuth0();
 
-  const getData = () => {
-    Axios.get('https://inventory-management-q6zw.onrender.com/getProducts').then(res => {
-      setData(res.data);
-    })
+  const routes = [
+    {
+      path: '/',
+      exact: false,
+      page: null,
+    },
+    {
+      path: '/pages/Dashboard',
+      exact: false,
+      page:
+        <Dashboard />,
+    },
+    {
+      path: '/pages/Products',
+      exact: false,
+      page:
+        <Products />,
+    },
+    {
+      path: '/pages/Logout',
+      exact: false,
+      page:
+        <Logout />,
+    },
+  ];
+
+  if (isLoading) {
+    return <LinearProgress />;
   }
 
-  useEffect(() => {
-    getData();
-  }, []);
-
-  const products = data?.map((item) => (
-    <li key={item.id}>
-      <i>{item.title}</i>
-    </li>
-  ));
-
-  return products;
-};
+  return (
+    <>
+      { isAuthenticated ? null : <Home /> }
+      <Routes>
+				{routes.map((route, index) => (
+					<Route
+						element={route.page}
+						exact={route.exact}
+						key={index}
+						path={route.path}
+					/>
+				))}
+			</Routes>
+    </>
+  );
+}
 
 export default App;
