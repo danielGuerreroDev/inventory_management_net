@@ -1,5 +1,6 @@
-import React from 'react';
-import BaseContainer from '../components/BaseContainer.jsx';
+import React, { Suspense } from 'react';
+
+const BaseContainer = React.lazy(() => import('../components/BaseContainer.jsx'));
 
 function Hi () {
 	return (<h1>Hi NET!</h1>);
@@ -8,9 +9,11 @@ function Hi () {
 function Dashboard() {
 	return (
 		<>
-			<BaseContainer
-				component={<Hi />}
-			/>
+			<Suspense fallback={<div>Loading...</div>}>
+				<BaseContainer
+					component={<Hi />}
+				/>
+			</Suspense>
 		</>
 	);
 }
