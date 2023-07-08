@@ -6,7 +6,7 @@ function LogoutButton() {
   const { logout } = useAuth0();
 
   const logoutClick = () => {
-    logout({ logoutParams: { returnTo:"http://localhost:3000" } });
+    logout({ logoutParams: { returnTo:"https://prod--im-danielguerrero.netlify.app/" } });
   }
 
   return (
