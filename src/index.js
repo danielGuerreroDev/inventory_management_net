@@ -15,7 +15,7 @@ root.render(
         domain="dev-vnwjwcrifapoxfal.us.auth0.com"
         clientId="OGYgDMe4vkwc5902j9FNEpwMfYg9Ox8n"
         authorizationParams={{
-          redirect_uri:"https://prod--im-danielguerrero.netlify.app/pages/Dashboard"
+          redirect_uri:"http://localhost:3000/pages/Dashboard"
         }}
       >
         <App />
