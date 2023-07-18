@@ -32,7 +32,7 @@ const columns = [
 function Products() {
 	const [data, setData] = useState(null);
 	const [openDrawer, setOpenDrawer] = useState(false);
-	const [productId, setProductId] = useState(null);
+	const [productId, setProductId] = useState(1);
 	const [page, setPage] = useState(0);
 	const [rowsPerPage, setRowsPerPage] = useState(10);
 
