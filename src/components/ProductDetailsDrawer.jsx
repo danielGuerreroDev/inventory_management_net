@@ -147,7 +147,7 @@ function ProductDetailsDrawer({ id, openDrawer, closeProductDetails, getDataProd
   const onSave = async () => {
     setData(clonedData);
     const params = data;
-    Axios.put(`https://inventory-management-gu28.onrender.com/product/${id}/update`, params).then(res => {
+    Axios.put(`https://inventory-management-gu28.onrender.com/product/${id}`, params).then(res => {
       setActionsMessage("Your changes have been saved.");
       handleSnackbarConfirm();
       getData();
