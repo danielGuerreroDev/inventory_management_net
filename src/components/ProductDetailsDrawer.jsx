@@ -112,13 +112,13 @@ function ProductDetailsDrawer({ id, openDrawer, closeProductDetails, getDataProd
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const getData = useCallback(async () => {
-    Axios.get(`https://inventory-management-q6zw.onrender.com/getProduct/${id}`).then(res => {
+    Axios.get(`https://inventory-management-gu28.onrender.com/getProduct/${id}`).then(res => {
       setData(res.data);
     });
   }, [id]);
 
   const getCategories = async () => {
-    Axios.get('https://inventory-management-q6zw.onrender.com/getCategories').then(res => {
+    Axios.get('https://inventory-management-gu28.onrender.com/getCategories').then(res => {
       setCategories(res.data);
     })
   };
@@ -147,7 +147,7 @@ function ProductDetailsDrawer({ id, openDrawer, closeProductDetails, getDataProd
   const onSave = async () => {
     setData(clonedData);
     const params = data;
-    Axios.put(`https://inventory-management-q6zw.onrender.com/product/${id}/update`, params).then(res => {
+    Axios.put(`https://inventory-management-gu28.onrender.com/product/${id}/update`, params).then(res => {
       setActionsMessage("Your changes have been saved.");
       handleSnackbarConfirm();
       getData();
@@ -173,7 +173,7 @@ function ProductDetailsDrawer({ id, openDrawer, closeProductDetails, getDataProd
   }
 
   const deleteProduct = async () => {
-    Axios.delete(`https://inventory-management-q6zw.onrender.com/product/delete/${id}`).then(res => {
+    Axios.delete(`https://inventory-management-gu28.onrender.com/product/delete/${id}`).then(res => {
       setActionsMessage("Product deleted.");
       handleCloseProductDetails();
       handleCloseDialogDelete();
