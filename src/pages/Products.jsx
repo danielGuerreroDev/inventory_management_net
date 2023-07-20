@@ -39,7 +39,7 @@ function Products() {
 	const classes = styles();
 
 	const getData = () => {
-		Axios.get('https://inventory-management-q6zw.onrender.com/getProducts').then(res => {
+		Axios.get('https://inventory-management-gu28.onrender.com/getProducts').then(res => {
 			setData(res.data);
 		})
 	}
