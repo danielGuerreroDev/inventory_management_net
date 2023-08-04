@@ -6,7 +6,6 @@ import {
 import { useAuth0 } from '@auth0/auth0-react';
 import Dashboard from './pages/Dashboard.jsx';
 import Home from './pages/Home.jsx';
-import Logout from './pages/Logout.jsx';
 import Products from './pages/Products.jsx';
 import LinearProgress from '@mui/material/LinearProgress';
 
@@ -30,12 +29,6 @@ function App() {
       exact: false,
       page:
         <Products />,
-    },
-    {
-      path: '/pages/Logout',
-      exact: false,
-      page:
-        <Logout />,
     },
   ];
 
