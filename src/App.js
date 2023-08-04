@@ -45,17 +45,17 @@ function App() {
 
   return (
     <>
-      { isAuthenticated ? null : <Home /> }
+      {isAuthenticated ? null : <Home />}
       <Routes>
-				{routes.map((route, index) => (
-					<Route
-						element={route.page}
-						exact={route.exact}
-						key={index}
-						path={route.path}
-					/>
-				))}
-			</Routes>
+        {routes.map((route, index) => (
+          <Route
+            element={route.page}
+            exact={route.exact}
+            key={index}
+            path={route.path}
+          />
+        ))}
+      </Routes>
     </>
   );
 }

@@ -22,11 +22,11 @@ function Welcome() {
 		<>
 			<Grid
 				container
-				sx= {{ paddingTop:"60px" }}
+				sx={{ paddingTop: "60px" }}
 			>
 				<Grid
 					item
-					sx={{ width:"100%" }}
+					sx={{ width: "100%" }}
 				>
 					<Container
 						className={classes.root}

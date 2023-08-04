@@ -6,7 +6,7 @@ function LogoutButton() {
   const { logout } = useAuth0();
 
   const logoutClick = () => {
-    logout({ logoutParams: { returnTo:"https://inventory-management-net.onrender.com/" } });
+    logout({ logoutParams: { returnTo: "https://inventory-management-net.onrender.com/" } });
   }
 
   return (

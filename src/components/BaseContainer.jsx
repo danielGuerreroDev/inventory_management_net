@@ -53,12 +53,12 @@ function BaseContainer({ component }) {
       <Grid
         container
         justifyContent="end"
-        sx= {{ paddingTop:"60px" }}
+        sx={{ paddingTop: "60px" }}
       >
         <Grid
           item
           sx={
-            { width:`calc(100% - ${sideBarWidth}px) !important` }
+            { width: `calc(100% - ${sideBarWidth}px) !important` }
           }
           className={isOpen ? classes.showSideBar : classes.hideSideBar}
         >

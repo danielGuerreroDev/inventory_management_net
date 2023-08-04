@@ -107,7 +107,7 @@ function ProductDetailsDrawer({ id, openDrawer, closeProductDetails, getDataProd
   const [openActions, setOpenActions] = useState(false);
   const [openDialogDelete, setOpenDialogDelete] = useState(false);
   const [openSnackbarConfirm, setOpenSnackbarConfirm] = useState(false);
-  const [edit, setEdit ] = useState(false);
+  const [edit, setEdit] = useState(false);
   const [categories, setCategories] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState(null);
 
@@ -195,7 +195,7 @@ function ProductDetailsDrawer({ id, openDrawer, closeProductDetails, getDataProd
     const categoryValue = event.target.value;
     setSelectedCategory(categoryValue);
     for (const key in clonedData) {
-      if(key === categoryField) {
+      if (key === categoryField) {
         clonedData[key] = categoryValue;
       }
     }
@@ -208,7 +208,7 @@ function ProductDetailsDrawer({ id, openDrawer, closeProductDetails, getDataProd
     setData({});
   }
 
-  function CustomMenu (props) {
+  function CustomMenu(props) {
     return (
       <Menu
         anchorOrigin={{
@@ -232,14 +232,14 @@ function ProductDetailsDrawer({ id, openDrawer, closeProductDetails, getDataProd
     const field = event.target.id;
     const fieldValue = event.target.value;
     for (const key in clonedData) {
-      if(key === field) {
+      if (key === field) {
         clonedData[key] = fieldValue;
       }
     }
   }
 
-  function Details () {
-    return(
+  function Details() {
+    return (
       <StrictMode key={data.id}>
         <div className={classes.mainDetailContainer}>
           <Avatar
@@ -282,8 +282,8 @@ function ProductDetailsDrawer({ id, openDrawer, closeProductDetails, getDataProd
     );
   }
 
-  function EditableDetails () {
-    return(
+  function EditableDetails() {
+    return (
       <StrictMode key={clonedData.id}>
         <div key={clonedData.id} className={classes.mainDetailContainer}>
           <Avatar
@@ -461,7 +461,7 @@ function ProductDetailsDrawer({ id, openDrawer, closeProductDetails, getDataProd
             variant="contained"
             color="error"
           >
-              Yes
+            Yes
           </Button>
         </DialogActions>
       </Dialog>
