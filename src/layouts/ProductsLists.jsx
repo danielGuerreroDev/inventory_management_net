@@ -8,8 +8,10 @@ import TableContainer from '@mui/material/TableContainer';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
+import LinearProgress from '@mui/material/LinearProgress';
 
-function ProductsList({ columns, rows }) {
+function ProductsList({ columns, isLoading, rows }) {
+  console.log('isLoading 2', isLoading);
   return (
     <>
       <Grid container>
@@ -22,11 +24,12 @@ function ProductsList({ columns, rows }) {
                 <Table stickyHeader>
                   <TableHead>
                     <TableRow>
-                      {columns.map((column) => (
-                        <TableCell key={column.id}>
-                          <b>{column.title}</b>
-                        </TableCell>
-                      ))}
+                      {isLoading ? <LinearProgress /> :
+                        columns.map((column) => (
+                          <TableCell key={column.id}>
+                            <b>{column.title}</b>
+                          </TableCell>
+                        ))}
                     </TableRow>
                   </TableHead>
                   <TableBody>
