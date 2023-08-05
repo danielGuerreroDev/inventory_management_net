@@ -5,6 +5,7 @@ import TableRow from '@mui/material/TableRow';
 import TablePagination from "@mui/material/TablePagination";
 import { makeStyles } from "@mui/styles";
 import Axios from "axios";
+import { sortBy } from "lodash";
 import { backend_url } from "../urls.js";
 import LinearProgress from '@mui/material/LinearProgress';
 
@@ -67,8 +68,10 @@ function Products() {
     currency: 'USD',
   });
 
-  const rows = data?.slice(page * rowsPerPage,
-    page * rowsPerPage + rowsPerPage).sort().map((item) => (
+  const dataSorted = data ? sortBy(data, [id]) : null;
+
+  const rows = dataSorted?.slice(page * rowsPerPage,
+    page * rowsPerPage + rowsPerPage).map((item) => (
       <TableRow
         className={classes.hover}
         hover
