@@ -3,7 +3,7 @@ import React, { Suspense } from 'react';
 const BaseContainer = React.lazy(() => import('../components/BaseContainer.jsx'));
 
 function Hi() {
-  return (<h1>Hi NET!</h1>);
+  return (<h1>Hello! Consult the products from the side menu.</h1>);
 }
 
 function Dashboard() {

@@ -24,6 +24,7 @@ import Select from '@mui/material/Select';
 import InputLabel from '@mui/material/InputLabel';
 import Snackbar from "@mui/material/Snackbar";
 import Axios from "axios";
+import { backend_url } from "../urls";
 
 const styles = makeStyles({
   drawer: {
@@ -112,13 +113,13 @@ function ProductDetailsDrawer({ id, openDrawer, closeProductDetails, getDataProd
   const [selectedCategory, setSelectedCategory] = useState(null);
 
   const getData = useCallback(async () => {
-    Axios.get(`https://inventory-management-gu28.onrender.com/getProduct/${id}`).then(res => {
+    Axios.get(`${backend_url}/getProduct/${id}`).then(res => {
       setData(res.data);
     });
   }, [id]);
 
   const getCategories = async () => {
-    Axios.get('https://inventory-management-gu28.onrender.com/getCategories').then(res => {
+    Axios.get(`${backend_url}/getCategories`).then(res => {
       setCategories(res.data);
     })
   };
@@ -147,7 +148,7 @@ function ProductDetailsDrawer({ id, openDrawer, closeProductDetails, getDataProd
   const onSave = async () => {
     setData(clonedData);
     const params = data;
-    Axios.put(`https://inventory-management-gu28.onrender.com/product/${id}`, params).then(res => {
+    Axios.put(`${backend_url}/product/${id}`, params).then(res => {
       setActionsMessage("Your changes have been saved.");
       handleSnackbarConfirm();
       getData();
@@ -173,7 +174,7 @@ function ProductDetailsDrawer({ id, openDrawer, closeProductDetails, getDataProd
   }
 
   const deleteProduct = async () => {
-    Axios.delete(`https://inventory-management-gu28.onrender.com/product/delete/${id}`).then(res => {
+    Axios.delete(`${backend_url}/product/delete/${id}`).then(res => {
       setActionsMessage("Product deleted.");
       handleCloseProductDetails();
       handleCloseDialogDelete();

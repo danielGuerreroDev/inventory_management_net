@@ -5,6 +5,7 @@ import TableRow from '@mui/material/TableRow';
 import TablePagination from "@mui/material/TablePagination";
 import { makeStyles } from "@mui/styles";
 import Axios from "axios";
+import { backend_url } from "../urls.js";
 
 const BaseContainer = React.lazy(() => import('../components/BaseContainer.jsx'));
 const ProductDetailsDrawer = React.lazy(() => import('../components/ProductDetailsDrawer.jsx'));
@@ -39,7 +40,7 @@ function Products() {
 	const classes = styles();
 
 	const getData = () => {
-		Axios.get('https://inventory-management-gu28.onrender.com/getProducts').then(res => {
+		Axios.get(`${backend_url}/getProducts`).then(res => {
 			setData(res.data);
 		})
 	}
