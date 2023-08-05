@@ -1,4 +1,5 @@
 import React, { Suspense } from 'react';
+import LinearProgress from '@mui/material/LinearProgress';
 
 const BaseContainer = React.lazy(() => import('../components/BaseContainer.jsx'));
 
@@ -9,7 +10,7 @@ function Hi() {
 function Dashboard() {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={ <LinearProgress /> }>
         <BaseContainer
           component={<Hi />}
         />

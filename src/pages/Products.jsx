@@ -6,6 +6,7 @@ import TablePagination from "@mui/material/TablePagination";
 import { makeStyles } from "@mui/styles";
 import Axios from "axios";
 import { backend_url } from "../urls.js";
+import LinearProgress from '@mui/material/LinearProgress';
 
 const BaseContainer = React.lazy(() => import('../components/BaseContainer.jsx'));
 const ProductDetailsDrawer = React.lazy(() => import('../components/ProductDetailsDrawer.jsx'));
@@ -93,11 +94,9 @@ function Products() {
     setPage(0);
   }
 
-  console.log('isLoading 1', isLoading);
-
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={ <LinearProgress /> }>
         <BaseContainer
           component={
             <>

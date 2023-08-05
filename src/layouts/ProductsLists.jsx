@@ -11,7 +11,6 @@ import Paper from '@mui/material/Paper';
 import LinearProgress from '@mui/material/LinearProgress';
 
 function ProductsList({ columns, isLoading, rows }) {
-  console.log('isLoading 2', isLoading);
   return (
     <>
       <Grid container>
