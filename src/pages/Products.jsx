@@ -5,7 +5,7 @@ import TableRow from '@mui/material/TableRow';
 import TablePagination from "@mui/material/TablePagination";
 import { makeStyles } from "@mui/styles";
 import Axios from "axios";
-import { sortBy } from "lodash";
+import { orderBy } from "lodash";
 import { backend_url } from "../urls.js";
 import LinearProgress from '@mui/material/LinearProgress';
 
@@ -68,7 +68,7 @@ function Products() {
     currency: 'USD',
   });
 
-  const dataSorted = data ? sortBy(data, ["id"], ["desc"]) : null;
+  const dataSorted = data ? orderBy(data, ["id"], ["desc"]) : null;
 
   const rows = dataSorted?.slice(page * rowsPerPage,
     page * rowsPerPage + rowsPerPage).map((item) => (
