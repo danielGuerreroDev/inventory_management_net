@@ -68,7 +68,7 @@ function Products() {
   });
 
   const rows = data?.slice(page * rowsPerPage,
-    page * rowsPerPage + rowsPerPage).map((item) => (
+    page * rowsPerPage + rowsPerPage).sort().map((item) => (
       <TableRow
         className={classes.hover}
         hover
@@ -103,7 +103,7 @@ function Products() {
               <ProductsList
                 columns={columns}
                 isLoading={isLoading}
-                rows={rows.sort()}
+                rows={rows}
               />
               <TablePagination
                 component="div"
