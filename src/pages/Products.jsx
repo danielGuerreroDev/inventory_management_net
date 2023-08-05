@@ -58,7 +58,7 @@ function Products() {
   }
 
   const closeProductDetails = () => {
-    setProductId(null);
+    setProductId(1);
     setOpenDrawer(!openDrawer);
   }
 
@@ -103,7 +103,7 @@ function Products() {
               <ProductsList
                 columns={columns}
                 isLoading={isLoading}
-                rows={rows}
+                rows={rows.sort()}
               />
               <TablePagination
                 component="div"
