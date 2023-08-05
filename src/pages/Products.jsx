@@ -68,7 +68,7 @@ function Products() {
     currency: 'USD',
   });
 
-  const dataSorted = data ? sortBy(data, ["id"]) : null;
+  const dataSorted = data ? sortBy(data, ["id"], ["desc"]) : null;
 
   const rows = dataSorted?.slice(page * rowsPerPage,
     page * rowsPerPage + rowsPerPage).map((item) => (
